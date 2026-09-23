@@ -94,18 +94,9 @@ Each experiment is organized in its own folder so that the programs, screenshots
 | **06** | CO2 | Decimal ↔ hexadecimal conversion                               | `decimaltohexa.l`, `hexatodecimal.l` | [📖 README](EXP%2006%29%20Decimal%20%E2%86%94%20Hexadecimal%20Conversion/README.md) |
 | **07** | CO3 | Test lines ending with “COM”                                   | `exp7.l`                             |  [📖 README](EXP%2007%29%20Lines%20ending%20with%20%E2%80%9CCOM%E2%80%9D/README.md) |
 | **08** | CO3 | Postfix Expression Evaluation                                  | —                                    |        [📖 README](EXP%2008%29%20Postfix%20Expression%20Evaluation/README.md)       |
-| **09** | CO4 | Desk calculator with error recovery                            | —                                    |                                     🔜 Not added                                    |
-| **10** | CO4 | Parser for “FOR” loop statements                               | —                                    |                                     🔜 Not added                                    |
 
 ---
 
-## ⭐ Value Added Experiment
-
-|   No.  |  CO | Experiment                                                   |    Status    |
-| :----: | :-: | ------------------------------------------------------------ | :----------: |
-| **01** | CO4 | Intermediate Code Generator (ICG) for arithmetic expressions | 🔜 Not added |
-
----
 
 ## 📂 Repository Structure
 
@@ -323,19 +314,6 @@ gcc lex.yy.c -o exp2
 ./exp2
 ```
 
----
-
-## ⚠️ Repository Notes
-
-* Folder names contain spaces and special characters, so they should be enclosed in quotes when using `cd`.
-* Experiments **01 and 06** contain multiple programs. Build them one at a time because each Flex program generates `lex.yy.c`.
-* Experiment **04** combines Lex and YACC.
-* Experiments **09 and 10** are part of the course list but have not yet been added to the repository.
-* Experiment **08** currently contains documentation but no source implementation.
-* Screenshots represent actual laboratory execution sessions.
-* Where the screenshot version differs from the committed source, the corresponding experiment README documents the difference.
-
----
 
 ## 📈 Learning Progress
 

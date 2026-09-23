@@ -1,31 +1,43 @@
 %{
 #include<stdio.h>
-int words = 0;
-int iden =0;
-int key = 0;
-int spaces = 0;
-int comments = 0;
-int line = 0;
+
+int words=0, keywords=0, identifiers=0;
+int spaces=0, lines=0, comments=0;
 %}
 
 %%
-[ \t\n] {words++;}
-"int"|"float"|"char"|"double"|"if"|"else"|"for"|"while"|"return|signed|unsigned|default|case|switch|struct|const" { key++; }
-[A-Za-z_][A-Za-z0-9_]* { iden++; }
-"//".* {comments++;}
-[\n] {spaces++;}
-.|\n
+"//".*                      { comments++; }
+
+"int"|"float"|"char"|"double"|"if"|"else"|"for"|"while"|"return"|"break"|"case"|"char"|"const"|"continue"|"default"|"do"|"double"|"else"|"long"|"short"|"signed"|"sizeof"|"struct"|"switch"|"void"  { keywords++; words++; }
+
+[A-Za-z_][A-Za-z0-9_]*      { identifiers++; words++; }
+[0-9]+(\.[0-9]+)?   { words++; }
+[ \t]                       { spaces++; }
+\n                          { lines++; }
+.           { }
 %%
 
-int main(){
-printf("Enter a String: ");
-yylex();
-printf("Words Count: %d\n",words);
-printf("Identifiers Count: %d\n",iden);
-printf("Keywords Count: %d\n",key);
-return 0;
+int main()
+{
+    printf("Enter the input:\n");
+    yylex();
+
+    printf("\nWords = %d", words);
+    printf("\nKeywords = %d", keywords);
+    printf("\nIdentifiers = %d", identifiers);
+    printf("\nComments = %d", comments);
+    printf("\nSpaces = %d", spaces);
+    printf("\nLines = %d", lines + 1);
+
+    return 0;
 }
 
-int yywrap(){
-return 1;
+int yywrap()
+{
+    return 1;
 }
+
+
+
+
+

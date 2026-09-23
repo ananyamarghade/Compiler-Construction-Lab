@@ -10,8 +10,6 @@ To count the words, keywords, identifiers, comments, lines and spaces in an inpu
 
 | Token class | Pattern / rule | Reported |
 |---|---|---|
-| Token class | Pattern / rule | Reported |
-|---|---|---|
 | Words | `[ \t\n]` — incremented once for every space, tab or newline | Yes (`Words Count`) |
 | Keywords | `int`, `float`, `char`, `double`, `if`, `else`, `for`, `while`, `return`, `break`, `case`, `const`, `continue`, `default`, `do`, `long`, `short`, `signed`, `sizeof`, `struct`, `switch`, `void` | Yes (`Keywords Count`) |
 | Identifiers | `[A-Za-z_][A-Za-z0-9_]*` | Yes (`Identifiers Count`) |

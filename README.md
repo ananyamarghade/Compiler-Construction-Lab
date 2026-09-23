@@ -16,13 +16,9 @@
 
 ---
 
-<div align="center">
-
 ### 🔬 Compiler Construction Lab
 
 Lexical analysis → Token recognition → Parsing → Expression processing
-
-</div>
 
 This repository contains the laboratory work for the **Compiler Construction** course. It includes practical implementations using **Lex/Flex, YACC and C**, along with source code, execution screenshots and experiment-wise documentation.
 
@@ -32,7 +28,6 @@ Each experiment is organized in its own folder so that the programs, screenshots
 
 ## 👩‍💻 Author
 
-<div align="center">
 
 |                     |                           |
 | ------------------- | ------------------------- |
@@ -42,7 +37,6 @@ Each experiment is organized in its own folder so that the programs, screenshots
 | **Batch**           | **A1**                    |
 | **Course**          | **Compiler Construction Lab** |
 
-</div>
 
 ---
 

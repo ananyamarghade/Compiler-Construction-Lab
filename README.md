@@ -25,7 +25,6 @@ This repository contains the laboratory work for the **Compiler Construction** c
 Each experiment is organized in its own folder so that the programs, screenshots and explanations remain easy to navigate.
 
 ---
-
 ## 👩‍💻 Author
 
 
@@ -66,22 +65,6 @@ Each experiment is organized in its own folder so that the programs, screenshots
 
 ---
 
-## 📸 Laboratory Preview
-
-<div align="center">
-
-<img src="EXP 02) Count Code Tokens/exp2 code.png" width="48%" alt="Lex code">
-
-<img src="EXP 02) Count Code Tokens/exp2 output.png" width="48%" alt="Lex output">
-
-<br><br>
-
-<em>Sample Lex program and execution output from the laboratory record.</em>
-
-</div>
-
----
-
 ## 📚 Experiment Index
 
 |   No.  |  CO | Experiment                                                     | Source                               |                                    Documentation                                    |
@@ -93,7 +76,7 @@ Each experiment is organized in its own folder so that the programs, screenshots
 | **05** | CO2 | Conversion of lowercase to uppercase and vice versa            | `exp5.l`                             |           [📖 README](EXP%2005%29%20Lowercase%20to%20Uppercase/README.md)           |
 | **06** | CO2 | Decimal ↔ hexadecimal conversion                               | `decimaltohexa.l`, `hexatodecimal.l` | [📖 README](EXP%2006%29%20Decimal%20%E2%86%94%20Hexadecimal%20Conversion/README.md) |
 | **07** | CO3 | Test lines ending with “COM”                                   | `exp7.l`                             |  [📖 README](EXP%2007%29%20Lines%20ending%20with%20%E2%80%9CCOM%E2%80%9D/README.md) |
-| **08** | CO3 | Postfix Expression Evaluation                                  | —                                    |        [📖 README](EXP%2008%29%20Postfix%20Expression%20Evaluation/README.md)       |
+| **08** | CO3 | Postfix Expression Evaluation                                  | `exp8.l`, `exp8.y`                   |        [📖 README](EXP%2008%29%20Postfix%20Expression%20Evaluation/README.md)       |
 
 ---
 
@@ -154,10 +137,28 @@ Compiler-Construction-Lab/
 │   └── exp7 output.png
 │
 └── EXP 08) Postfix Expression Evaluation/
-    └── README.md
+    ├── README.md
+    ├── exp8.l
+    ├── exp8.y
+    ├── lex code.png
+    ├── yacc code.png
+    └── exp8 output.png
 ```
 
 ---
+
+## 📸 Preview
+
+**Sample Lex code**
+
+![Lex code](EXP%2002%29%20Count%20Code%20Tokens/exp2%20code.png)
+
+**Sample execution output**
+
+![Lex output](EXP%2002%29%20Count%20Code%20Tokens/exp2%20output.png)
+
+---
+
 
 ## ⚙️ Prerequisites
 
@@ -193,7 +194,7 @@ gcc lex.yy.c
 ./a.out
 ```
 
-### 🔹 Lex + YACC — Experiment 04
+### 🔹 Lex + YACC — Experiments 04 and 08
 
 ```bash
 cd "EXP 04) YACC tool"
@@ -203,6 +204,17 @@ flex exp4.l
 gcc y.tab.c lex.yy.c -ll
 ./a.out
 ```
+
+```bash
+cd "EXP 08) Postfix Expression Evaluation"
+
+yacc -d exp8.y
+flex exp8.l
+gcc y.tab.c lex.yy.c -ll -lm
+./a.out
+```
+
+Experiment 08 links against `-lm` in addition to `-ll` because its grammar uses `pow()` for the `^` operator. See its [README](EXP%2008%29%20Postfix%20Expression%20Evaluation/README.md) for a build/toolchain caveat around one of its rules.
 
 ### ⌨️ Input
 

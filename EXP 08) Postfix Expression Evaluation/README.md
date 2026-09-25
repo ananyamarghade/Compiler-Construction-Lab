@@ -2,7 +2,7 @@
 
 ## Aim
 
-To evaluate a postfix expression using Lex and YACC.
+To evaluate a postfix (Reverse Polish) expression using Lex and YACC.
 
 ## Description
 
@@ -89,15 +89,19 @@ A character the scanner does not recognize prints `ERROR!`; a token sequence the
 
 ## Notes
 
-- **`++` does not compile with the Flex/Bison versions used to verify this README.** In `exp8.l`, the rule `++` is a bare `+` quantifier with nothing to its left, which Flex rejects (`unrecognized rule`); in `exp8.y`, `'++'` is a two-character literal, which Bison rejects (`extra characters in character literal`). The output screenshot below shows the program built and ran successfully — including a `5 ++` style line — which indicates the lab machine used a more lenient Lex/YACC toolchain than the one used to check this file. If `exp8.l`/`exp8.y` fail to build as shown above, this rule is the likely cause.
+- **`++` does not compile with the Flex/Bison versions used to verify this README.** In `exp8.l`, the rule `++` is a bare `+` quantifier with nothing to its left, which Flex rejects (`unrecognized rule`); in `exp8.y`, `'++'` is a two-character literal, which Bison rejects (`extra characters in character literal`). The output screenshot (`exp8 output.png`) shows the program built and ran successfully — including a `5 ++` style line — which indicates the lab machine used a more lenient Lex/YACC toolchain than the one used to check this file. If `exp8.l`/`exp8.y` fail to build as shown above, this rule is the likely cause.
 - Even where the `++` rule does compile, `$$ = $1++` uses C's post-increment operator, which evaluates to `$1`'s original value, not `$1 + 1`. So the rule does not increment the result the way its name suggests.
 - The `'%'` rule is C's modulo operator applied to `int`, so results follow C's truncating integer division and its sign convention for negative operands.
 
 ## Screenshots
 
-| Lex code | YACC code |
-|---|---|
-| ![Lex code](lex%20code.png) | ![YACC code](yacc%20code.png) |
+**Lex specification**
+
+![Lex code](lex%20code.png)
+
+**YACC specification**
+
+![YACC code](yacc%20code.png)
 
 **Output**
 

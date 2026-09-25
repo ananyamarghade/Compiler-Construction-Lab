@@ -14,7 +14,6 @@ The experiment combines a Lex scanner and a YACC parser. Rather than evaluating 
 |---|---|
 | `[0-9]+` | returns `NUMBER`, with `yylval` set to the integer value |
 | `[-+*/^%]` | returns the operator character itself |
-| `++` | intended to return a two-character increment operator |
 | `[ \t]` | ignored |
 | `\n` | returns `'\n'` (marks the end of a statement) |
 | `.` | prints `ERROR!` for any other character |
@@ -34,7 +33,6 @@ expr:
     | expr expr '*'    { $$ = $1 * $2; }
     | expr expr '/'    { $$ = $1 / $2; }
     | expr expr '%'    { $$ = $1 % $2; }
-    | expr '++'        { $$ = $1++; }
     | expr expr '^'    { $$ = (int)pow($1, $2); }
     ;
 ```
@@ -87,11 +85,6 @@ Error
 
 A character the scanner does not recognize prints `ERROR!`; a token sequence the grammar does not accept (such as an infix expression, or any line after the first error) prints `Error` from `yyerror()` and ends the program, since the grammar has no error-recovery rule.
 
-## Notes
-
-- **`++` does not compile with the Flex/Bison versions used to verify this README.** In `exp8.l`, the rule `++` is a bare `+` quantifier with nothing to its left, which Flex rejects (`unrecognized rule`); in `exp8.y`, `'++'` is a two-character literal, which Bison rejects (`extra characters in character literal`). The output screenshot (`exp8 output.png`) shows the program built and ran successfully — including a `5 ++` style line — which indicates the lab machine used a more lenient Lex/YACC toolchain than the one used to check this file. If `exp8.l`/`exp8.y` fail to build as shown above, this rule is the likely cause.
-- Even where the `++` rule does compile, `$$ = $1++` uses C's post-increment operator, which evaluates to `$1`'s original value, not `$1 + 1`. So the rule does not increment the result the way its name suggests.
-- The `'%'` rule is C's modulo operator applied to `int`, so results follow C's truncating integer division and its sign convention for negative operands.
 
 ## Screenshots
 

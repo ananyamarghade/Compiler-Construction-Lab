@@ -264,24 +264,25 @@ This keeps the **implementation, explanation and execution evidence** together f
 
 The Lex experiments demonstrate several common lexical-analysis operations:
 
-| Concept                | Demonstrated In |
-| ---------------------- | --------------- |
-| Regular expressions    | EXP 01          |
-| Lex metadata           | EXP 01          |
-| Token counting         | EXP 02          |
-| Keyword recognition    | EXP 02          |
-| Identifier recognition | EXP 02          |
-| Comment detection      | EXP 02          |
-| Word pattern matching  | EXP 03          |
-| Character conversion   | EXP 05          |
-| Number conversion      | EXP 06          |
-| Line pattern matching  | EXP 07          |
+| Concept                       | Demonstrated In |
+| ------------------------------ | --------------- |
+| Regular expressions           | EXP 01          |
+| Lex metadata                  | EXP 01          |
+| Token counting                | EXP 02          |
+| Keyword recognition           | EXP 02          |
+| Identifier recognition        | EXP 02          |
+| Comment detection             | EXP 02          |
+| Word pattern matching         | EXP 03          |
+| Character conversion          | EXP 05          |
+| Number conversion             | EXP 06          |
+| Line pattern matching         | EXP 07          |
+| Postfix expression evaluation | EXP 08          |
 
 ---
 
 ## 🔄 Lex + YACC Workflow
 
-Experiment 04 demonstrates the relationship between a lexical analyser and a parser:
+Experiments 04 and 08 demonstrate the relationship between a lexical analyser and a parser:
 
 ```text
              Input

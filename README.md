@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🧩 Compiler Construction Lab
+# Compiler Construction Lab
 <p>
-  <strong>Compiler Construction • CSE • Academic Laboratory</strong>
+  <strong>• Compiler Construction Experiments•</strong>
 </p>
 
 <p>

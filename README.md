@@ -53,100 +53,86 @@ Type the input, then press `Ctrl + D` to finish. `./run.sh list` shows all exper
 
 ---
 
-## 🔄 How the Tools Fit Together
+## 🧠 Phases of a Compiler
 
-### Build flow
+A compiler translates a source program into a target program in several phases. Each phase takes the output of the previous one. The phases highlighted in green are the ones implemented in this lab.
 
-Lex turns the scanner specification into C code, YACC turns the grammar into a parser, and GCC links both into one program. The `-d` option makes YACC also write `y.tab.h`, which gives the lexer the token codes it must return.
+```mermaid
+flowchart TD
+    SRC(["Source program"]) --> LEX["<b>1. Lexical Analyzer</b><br/>groups characters into tokens<br/>Lab: EXP 01-03, 05-07 (Lex)"]
+    LEX -->|"stream of tokens"| SYN["<b>2. Syntax Analyzer / Parser</b><br/>checks tokens against the grammar<br/>Lab: EXP 04, 08, 09, 10, EXTRA (YACC)"]
+    SYN -->|"parse tree"| SEM["<b>3. Semantic Analyzer</b><br/>type and meaning checks"]
+    SEM -->|"annotated tree"| ICG["<b>4. Intermediate Code Generator</b><br/>produces three-address code<br/>Lab: EXP 11 (YACC)"]
+    ICG -->|"intermediate code"| OPT["<b>5. Code Optimizer</b><br/>improves the intermediate code"]
+    OPT -->|"optimized code"| CGN["<b>6. Code Generator</b><br/>produces machine code"]
+    CGN --> TGT(["Target program"])
+
+    ST[("Symbol Table")] -.- LEX
+    ST -.- SYN
+    ST -.- SEM
+    ER{{"Error Handler"}} -.- LEX
+    ER -.- SYN
+    ER -.- SEM
+
+    classDef covered fill:#d4f5dc,stroke:#2e8b57,stroke-width:2px,color:#000;
+    classDef notcovered fill:#eeeeee,stroke:#999999,color:#555;
+    class LEX,SYN,ICG covered;
+    class SEM,OPT,CGN notcovered;
+```
+
+| Phase                          | What it does                                   | Tool used | Experiments               |
+| ------------------------------ | ---------------------------------------------- | :-------: | ------------------------- |
+| **Lexical Analyzer**           | Reads characters and produces tokens           |    Lex    | 01, 02, 03, 05, 06, 07    |
+| **Syntax Analyzer (Parser)**   | Checks the tokens against a grammar            |    YACC   | 04, 08, 09, 10, EXTRA     |
+| **Intermediate Code Generator**| Emits three-address instructions               |    YACC   | 11                        |
+
+### 1️⃣ Lexical Analyzer
+
+The lexical analyzer (scanner) reads the source text character by character, skips spaces and comments, and uses **regular expressions** to group the characters into **tokens**. In this lab it is written with **Lex / Flex**.
 
 ```mermaid
 flowchart LR
-    subgraph LEXSIDE["Lexer: .l file"]
-        L["prac9.l"] -->|flex| LY["lex.yy.c"]
-    end
-    subgraph YACCSIDE["Parser: .y file"]
-        Y["prac9.y"] -->|"yacc -d"| YT["y.tab.c"]
-        Y -->|"yacc -d"| YH["y.tab.h"]
-    end
-    YH -. "token codes" .-> LY
-    LY --> G["gcc"]
-    YT --> G
-    G --> A["executable"]
-    A --> R["reads stdin until Ctrl+D"]
+    SRC["Source text<br/><b>int a = 5 ;</b>"] --> LA["<b>Lexical Analyzer</b><br/>Lex / Flex<br/>removes spaces and comments<br/>matches regular expressions"]
+    LA --> T1["int : KEYWORD"]
+    LA --> T2["a : IDENTIFIER"]
+    LA --> T3["= : OPERATOR"]
+    LA --> T4["5 : NUMBER"]
+    LA --> T5["; : SEPARATOR"]
 ```
 
-Lex-only experiments (01, 02, 03, 05, 06, 07) skip the right-hand side: `flex file.l` then `gcc lex.yy.c`.
+### 2️⃣ Syntax Analyzer (Parser)
 
-### Run-time flow
-
-The parser is in control: whenever it needs input it calls `yylex()`, the lexer reads characters and hands back one token at a time, and the parser reduces tokens using the grammar rules and runs the action attached to each rule.
-
-```mermaid
-sequenceDiagram
-    participant U as User input
-    participant P as yyparse - YACC
-    participant L as yylex - Lex
-    P->>L: need next token
-    L->>U: read characters
-    L-->>P: token (NUMBER, yylval = 67)
-    P->>L: need next token
-    L-->>P: token '-'
-    Note over P: shift / reduce using grammar rules
-    P->>P: run action for the reduced rule
-    L-->>P: 0 at end of input
-    P-->>U: print result
-```
-
----
-
-## 🗺️ Experiment Roadmap
-
-The experiments build on each other: first lexical analysis, then YACC grammars, then larger parser programs.
+The parser receives the tokens and checks whether they follow the **grammar** of the language. If they do, it builds a **parse tree**; if not, it reports a syntax error. In this lab it is written with **YACC / Bison**, and the lexer supplies the tokens.
 
 ```mermaid
 flowchart TD
-    A["Lexical analysis<br/>EXP 01 - 03"] --> B["Character handling<br/>EXP 05 - 07"]
-    A --> C["Introduction to YACC<br/>EXP 04"]
-    C --> D["Postfix evaluation<br/>EXP 08"]
-    C --> E["Desk calculator<br/>EXP 09"]
-    C --> F["Statement validation<br/>EXP 10"]
-    C --> G["Declarations<br/>EXTRA"]
-    E --> H["Intermediate code<br/>EXP 11"]
+    TOK["Tokens from the lexer:<br/>NUM(67)  -  NUM(7)  *  NUM(2)"] --> P["<b>Parser</b> (YACC)<br/>applies the grammar rules<br/>E : E - E  |  E * E  |  NUM"]
+    P --> E0["E"]
+    E0 --> E1["E"]
+    E0 --> OP1["-"]
+    E0 --> E2["E"]
+    E1 --> N1["67"]
+    E2 --> E3["E"]
+    E2 --> OP2["*"]
+    E2 --> E4["E"]
+    E3 --> N2["7"]
+    E4 --> N3["2"]
+    classDef leaf fill:#fff3cd,stroke:#b8860b,color:#000;
+    class N1,N2,N3,OP1,OP2 leaf;
 ```
 
----
+Because `*` binds tighter than `-`, the multiplication sits deeper in the tree and is evaluated first. This is what the `%left` / `%right` precedence declarations in EXP 09 and EXP 11 control.
 
-## 🔍 Worked Examples
+### 3️⃣ Intermediate Code Generator
 
-### EXP 11 — how `67-7*2` becomes intermediate code
-
-`*` has higher precedence than `-`, so `7*2` is reduced first and gets the first temporary.
+While the parser reduces the grammar rules, the semantic action of each rule can emit **intermediate code**. EXP 11 prints one three-address style instruction for every operator, starting with the innermost one.
 
 ```mermaid
-flowchart TD
-    IN["Input: 67-7*2"] --> TOK["Lexer tokens: NUM(67)  '-'  NUM(7)  '*'  NUM(2)"]
-    TOK --> S1["Reduce E = 7 * 2<br/>print t1 = 7 * 2"]
-    S1 --> S2["Reduce E = 67 - 14<br/>print t2 = 67 - 14"]
-    S2 --> OUT["Reduce S = E<br/>print Result: 53"]
-    NOTE["'*' has higher precedence than '-', so it is reduced first"] -.-> S1
-```
-
-### EXP 09 — how one input line is handled
-
-```mermaid
-flowchart TD
-    S(["Read a line"]) --> T["Lexer returns tokens"]
-    T --> OP{"Operator is / or % ?"}
-    OP -- no --> CALC["Compute value"]
-    OP -- yes --> Z{"Divisor is 0 ?"}
-    Z -- no --> CALC
-    Z -- yes --> ERR["yyerror: print Error, set error = 1"]
-    ERR --> END{"error == 0 ?"}
-    CALC --> END
-    END -- yes --> PR["print RESULT"]
-    END -- no --> SK["skip RESULT, reset error = 0"]
-    PR --> NX(["Next line"])
-    SK --> NX
+flowchart LR
+    TREE["Parse tree of<br/><b>67 - 7 * 2</b>"] --> ICG["<b>Intermediate Code Generator</b><br/>one instruction for every operator,<br/>innermost operator first"]
+    ICG --> I1["t1 = 7 * 2"]
+    I1 --> I2["t2 = 67 - 14"]
+    I2 --> RES["Result: 53"]
 ```
 
 ---

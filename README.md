@@ -1,89 +1,61 @@
 <div align="center">
+Compiler Construction Lab
+<p> <strong>• Compiler Construction Experiments •</strong> </p> <p> <img src="https://img.shields.io/badge/Language-C-blue?style=for-the-badge" alt="C"> <img src="https://img.shields.io/badge/Lex%2FFlex-Lexical%20Analysis-orange?style=for-the-badge" alt="Lex/Flex"> <img src="https://img.shields.io/badge/YACC-Parsing-purple?style=for-the-badge" alt="YACC"> <img src="https://img.shields.io/badge/Platform-Ubuntu-green?style=for-the-badge" alt="Ubuntu"> </p> </div>
+🔬 Compiler Construction Lab
 
-# Compiler Construction Lab
-<p>
-  <strong>• Compiler Construction Experiments•</strong>
-</p>
+Lexical analysis → Token recognition → Parsing → Expression processing → Intermediate code generation
 
-<p>
-  <img src="https://img.shields.io/badge/Language-C-blue?style=for-the-badge" alt="C">
-  <img src="https://img.shields.io/badge/Lex%2FFlex-Lexical%20Analysis-orange?style=for-the-badge" alt="Lex/Flex">
-  <img src="https://img.shields.io/badge/YACC-Parsing-purple?style=for-the-badge" alt="YACC">
-  <img src="https://img.shields.io/badge/Platform-Ubuntu-green?style=for-the-badge" alt="Ubuntu">
-</p>
-
-</div>
-
----
-
-### 🔬 Compiler Construction Lab
-
-Lexical analysis → Token recognition → Parsing → Expression processing
-
-This repository contains the laboratory work for the **Compiler Construction** course. It includes practical implementations using **Lex/Flex, YACC and C**, along with source code, execution screenshots and experiment-wise documentation.
+This repository contains the laboratory work for the Compiler Construction course. It includes practical implementations using Lex/Flex, YACC and C, along with source code, execution screenshots and experiment-wise documentation.
 
 Each experiment is organized in its own folder so that the programs, screenshots and explanations remain easy to navigate.
 
----
-## 👩‍💻 Author
-
-
-|                     |                           |
-| ------------------- | ------------------------- |
-| **Name**            | **Ananya Marghade**       |
-| **PRN**             | **24070521004**           |
-| **Section**         | **A**                     |
-| **Batch**           | **A1**                    |
-| **Course**          | **Compiler Construction Lab** |
-
-
----
-
-## 🛠️ Technologies Used
-
-|          Technology         | Purpose                                       |
-| :-------------------------: | --------------------------------------------- |
-|        **Lex / Flex**       | Lexical analyser design and token recognition |
-|       **YACC / Bison**      | Grammar and parser construction               |
-|         **C / GCC**         | Host language and compilation                 |
-| **Ubuntu / Linux Terminal** | Build and execution environment               |
-
-### Core Concepts Covered
-
-* Lexical analysis
-* Regular expressions and patterns
-* Token recognition
-* Keywords and identifiers
-* Comments, words, lines and spaces
-* Lex actions and counters
-* YACC grammar specifications
-* Lex + YACC integration
-* Case conversion
-* Number-system conversion
-* Pattern matching
-* Postfix expression evaluation
-
----
-
-## 📚 Experiment Index
-
-|   No.  |  CO | Experiment                                                     | Source                               |                                    Documentation                                    |
-| :----: | :-: | -------------------------------------------------------------- | ------------------------------------ | :---------------------------------------------------------------------------------: |
-| **01** | CO1 | Introduction to LEX tool, metadata and patterns                | `practical1-1.l`, `practical1-2.l`   |    [📖 README](EXP%2001%29%20LEX%20tool%2C%20metadata%20and%20patterns/README.md)   |
-| **02** | CO1 | Count comments, keywords, identifiers, words, lines and spaces | `exp2.l`                             |              [📖 README](EXP%2002%29%20Count%20Code%20Tokens/README.md)             |
-| **03** | CO1 | Count words starting with “A”                                  | `exp3.l`                             | [📖 README](EXP%2003%29%20Words%20starting%20with%20%E2%80%9CA%E2%80%9D./README.md) |
-| **04** | CO2 | Introduction to YACC tool and YACC code format                 | `exp4.l`, `exp4.y`                   |                   [📖 README](EXP%2004%29%20YACC%20tool/README.md)                  |
-| **05** | CO2 | Conversion of lowercase to uppercase and vice versa            | `exp5.l`                             |           [📖 README](EXP%2005%29%20Lowercase%20to%20Uppercase/README.md)           |
-| **06** | CO2 | Decimal ↔ hexadecimal conversion                               | `decimaltohexa.l`, `hexatodecimal.l` | [📖 README](EXP%2006%29%20Decimal%20%E2%86%94%20Hexadecimal%20Conversion/README.md) |
-| **07** | CO3 | Test lines ending with “COM”                                   | `exp7.l`                             |  [📖 README](EXP%2007%29%20Lines%20ending%20with%20%E2%80%9CCOM%E2%80%9D/README.md) |
-| **08** | CO3 | Postfix Expression Evaluation                                  | `exp8.l`, `exp8.y`                   |        [📖 README](EXP%2008%29%20Postfix%20Expression%20Evaluation/README.md)       |
-
----
-
-
-## 📂 Repository Structure
-
-```text
+👩‍💻 Author
+	
+Name	Ananya Marghade
+PRN	24070521004
+Section	A
+Batch	A1
+Course	Compiler Construction Lab
+🛠️ Technologies Used
+Technology	Purpose
+Lex / Flex	Lexical analyser design and token recognition
+YACC / Bison	Grammar and parser construction
+C / GCC	Host language and compilation
+Ubuntu / Linux Terminal	Build and execution environment
+Core Concepts Covered
+Lexical analysis
+Regular expressions and patterns
+Token recognition
+Keywords and identifiers
+Comments, words, lines and spaces
+Lex actions and counters
+YACC grammar specifications
+Lex + YACC integration
+Case conversion
+Number-system conversion
+Pattern matching
+Postfix expression evaluation
+Operator precedence and associativity
+Desk calculator with increment / decrement operators
+Syntax validation of for loops and ternary expressions
+Intermediate code generation (three-address style)
+Variable declaration statements
+📚 Experiment Index
+No.	Experiment	Tool	Source Files	Docs
+01	Introduction to LEX tool, metadata and patterns	Lex	practical1-1.l, practical1-2.l	📖 View
+02	Count comments, keywords, identifiers, words, lines and spaces	Lex	exp2.l	📖 View
+03	Count words starting with “A”	Lex	exp3.l	📖 View
+04	Introduction to YACC tool and YACC code format	Lex + YACC	exp4.l, exp4.y	📖 View
+05	Conversion of lowercase to uppercase and vice versa	Lex	exp5.l	📖 View
+06	Decimal ↔ hexadecimal conversion	Lex	decimaltohexa.l, hexatodecimal.l	📖 View
+07	Test lines ending with “COM”	Lex	exp7.l	📖 View
+08	Postfix expression evaluation	Lex + YACC	exp8.l, exp8.y	📖 View
+09	Desk calculator	Lex + YACC	prac9.l, prac9.y	📖 View
+10	for loop and ternary expression validation	Lex + YACC	exp10.l, exp10.y	📖 View
+11	Intermediate code generation for arithmetic expressions	Lex + YACC	exp11.l, exp11.y	📖 View
+EXTRA	Variable declaration statements	Lex + YACC	variable.l, variable.y	📖 View
+📂 Repository Structure
+text
 Compiler-Construction-Lab/
 │
 ├── README.md
@@ -136,113 +108,154 @@ Compiler-Construction-Lab/
 │   ├── exp7 code.png
 │   └── exp7 output.png
 │
-└── EXP 08) Postfix Expression Evaluation/
+├── EXP 08) Postfix Expression Evaluation/
+│   ├── README.md
+│   ├── exp8.l
+│   ├── exp8.y
+│   ├── lex code.png
+│   ├── yacc code.png
+│   └── exp8 output.png
+│
+├── EXP 09) Desk Calculator/
+│   ├── README.md
+│   ├── prac9.l
+│   ├── prac9.y
+│   ├── exp9 lex.png
+│   ├── exp9 yacc.png
+│   └── exp9 output.png
+│
+├── EXP 10) FOR Loop Expressions/
+│   ├── README.md
+│   ├── exp10.l
+│   ├── exp10.y
+│   ├── exp10 lex.png
+│   ├── exp10 yacc.png
+│   └── exp10 output.png
+│
+├── EXP 11) ICG for Arithmetic expression/
+│   ├── README.md
+│   ├── exp11.l
+│   ├── exp11.y
+│   ├── exp11 lex.png
+│   ├── exp 11 yacc.png
+│   └── exp11 output.png
+│
+└── EXTRA - VARIABLE DECLARATION STATEMENTS/
     ├── README.md
-    ├── exp8.l
-    ├── exp8.y
-    ├── lex code.png
-    ├── yacc code.png
-    └── exp8 output.png
-```
+    ├── variable.l
+    ├── variable.y
+    ├── variable lex code.png
+    ├── variable yacc code.png
+    └── variable output.png
+📸 Preview
 
----
+Sample Lex code
 
-## 📸 Preview
+Lex code
 
-**Sample Lex code**
+Sample execution output
 
-![Lex code](EXP%2002%29%20Count%20Code%20Tokens/exp2%20code.png)
+Lex output
 
-**Sample execution output**
+Sample Lex + YACC output (Desk Calculator)
 
-![Lex output](EXP%2002%29%20Count%20Code%20Tokens/exp2%20output.png)
+Desk calculator output
 
----
+⚙️ Prerequisites
 
+Install Flex, Bison and GCC on Ubuntu/Debian:
 
-## ⚙️ Prerequisites
-
-Install **Flex, Bison and GCC** on Ubuntu/Debian:
-
-```bash
+bash
 sudo apt update
 sudo apt install flex bison gcc
-```
 
 Verify the installation:
 
-```bash
+bash
 flex --version
 bison --version
 gcc --version
-```
+▶️ Running the Experiments
+🔹 Lex-only Experiments
 
----
-
-## ▶️ Running the Experiments
-
-### 🔹 Lex-only Experiments
-
-Experiments **01, 02, 03, 05, 06 and 07** use Lex/Flex.
+Experiments 01, 02, 03, 05, 06 and 07 use Lex/Flex.
 
 Example:
 
-```bash
+bash
 cd "EXP 02) Count Code Tokens"
 flex exp2.l
 gcc lex.yy.c
 ./a.out
-```
-
-### 🔹 Lex + YACC — Experiments 04 and 08
-
-```bash
+🔹 Lex + YACC — Experiments 04, 08, 09, 10, 11 and EXTRA
+bash
 cd "EXP 04) YACC tool"
 
 yacc -d exp4.y
 flex exp4.l
 gcc y.tab.c lex.yy.c -ll
 ./a.out
-```
-
-```bash
+bash
 cd "EXP 08) Postfix Expression Evaluation"
 
 yacc -d exp8.y
 flex exp8.l
 gcc y.tab.c lex.yy.c -ll -lm
 ./a.out
-```
+bash
+cd "EXP 09) Desk Calculator"
 
-Experiment 08 links against `-lm` in addition to `-ll` because its grammar uses `pow()` for the `^` operator. See its [README](EXP%2008%29%20Postfix%20Expression%20Evaluation/README.md) for a build/toolchain caveat around one of its rules.
+yacc -d prac9.y
+flex prac9.l
+gcc y.tab.c lex.yy.c
+./a.out
+bash
+cd "EXP 10) FOR Loop Expressions"
 
-### ⌨️ Input
+yacc -d exp10.y
+flex exp10.l
+gcc y.tab.c lex.yy.c
+./a.out
+bash
+cd "EXP 11) ICG for Arithmetic expression"
 
-The programs read input from **standard input**.
+yacc -d exp11.y
+flex exp11.l
+gcc y.tab.c lex.yy.c
+./a.out
+bash
+cd "EXTRA - VARIABLE DECLARATION STATEMENTS"
+
+yacc -d variable.y
+flex variable.l
+gcc y.tab.c lex.yy.c
+./a.out
+
+Experiment 08 links against -lm in addition to -ll because its grammar uses pow() for the ^ operator. See its README for a build/toolchain caveat around one of its rules. Experiments 09–11 and EXTRA define their own yywrap(), so no extra libraries are required.
+
+⌨️ Input
+
+The programs read input from standard input.
 
 After entering the input, press:
 
-```text
+text
 Ctrl + D
-```
 
-to signal **End of File (EOF)**.
+to signal End of File (EOF).
 
 Alternatively:
 
-```bash
+bash
 ./a.out < input.txt
-```
 
 can be used for file-based input.
 
----
-
-## 🧠 How the Repository Is Organized
+🧠 How the Repository Is Organized
 
 Each experiment follows a simple structure:
 
-```text
+text
 Experiment
     │
     ├── Source Code
@@ -254,37 +267,42 @@ Experiment
     └── Evidence
            ├── Code Screenshot
            └── Output Screenshot
-```
 
-This keeps the **implementation, explanation and execution evidence** together for every practical.
+This keeps the implementation, explanation and execution evidence together for every practical.
 
----
-
-## 🔎 Lexical Analysis Coverage
+🔎 Lexical Analysis Coverage
 
 The Lex experiments demonstrate several common lexical-analysis operations:
 
-| Concept                       | Demonstrated In |
-| ------------------------------ | --------------- |
-| Regular expressions           | EXP 01          |
-| Lex metadata                  | EXP 01          |
-| Token counting                | EXP 02          |
-| Keyword recognition           | EXP 02          |
-| Identifier recognition        | EXP 02          |
-| Comment detection             | EXP 02          |
-| Word pattern matching         | EXP 03          |
-| Character conversion          | EXP 05          |
-| Number conversion             | EXP 06          |
-| Line pattern matching         | EXP 07          |
-| Postfix expression evaluation | EXP 08          |
+Concept	Demonstrated In
+Regular expressions	EXP 01
+Lex metadata	EXP 01
+Token counting	EXP 02
+Keyword recognition	EXP 02, EXP 10
+Identifier recognition	EXP 02, EXP 11
+Comment detection	EXP 02
+Word pattern matching	EXP 03
+Character conversion	EXP 05
+Number conversion	EXP 06
+Line pattern matching	EXP 07
+🧩 Parsing Coverage
 
----
+The Lex + YACC experiments cover the following parsing concepts:
 
-## 🔄 Lex + YACC Workflow
+Concept	Demonstrated In
+Basic YACC grammar format	EXP 04
+Postfix expression evaluation	EXP 08
+Operator precedence and associativity	EXP 09, EXP 11
+Postfix ++ / -- operators	EXP 09
+Division / modulo by zero handling	EXP 09
+Statement validation (for, ?:)	EXP 10
+Intermediate code generation	EXP 11
+Declaration statements (recursive rule)	EXTRA
+🔄 Lex + YACC Workflow
 
-Experiments 04 and 08 demonstrate the relationship between a lexical analyser and a parser:
+Experiments 04, 08, 09, 10, 11 and EXTRA demonstrate the relationship between a lexical analyser and a parser:
 
-```text
+text
              Input
                │
                ▼
@@ -303,34 +321,26 @@ Experiments 04 and 08 demonstrate the relationship between a lexical analyser an
                │
                ▼
              Output
-```
 
 Lex/Flex identifies tokens, while YACC/Bison uses the resulting tokens according to the grammar specification.
 
----
+🗂️ Generated Files
 
-## 🗂️ Generated Files
+The following files are generated during compilation and are not stored in the repository:
 
-The following files are generated during compilation and are **not stored in the repository**:
-
-```text
+text
 lex.yy.c
 y.tab.c
 y.tab.h
 a.out
-```
 
 For cleaner builds, an executable can also be given an explicit name:
 
-```bash
+bash
 gcc lex.yy.c -o exp2
 ./exp2
-```
-
-
-## 📈 Learning Progress
-
-```text
+📈 Learning Progress
+text
 LEX Fundamentals
        │
        ▼
@@ -350,19 +360,13 @@ Lex + YACC Integration
        │
        ▼
 Parsing & Intermediate Code
-```
-
----
-
 <div align="center">
+🧪 Compiler Construction Lab
 
-### 🧪 Compiler Construction Lab
-
-**Lexical Analysis • Parsing • Regular Expressions • YACC • C**
+Lexical Analysis • Parsing • Regular Expressions • YACC • C
 
 <br>
 
-**Ananya Marghade**
-PRN: 24070521004 • A / A1 • 2024–28
+Ananya Marghade PRN: 24070521004 • A / A1 • 2024–28
 
 </div>

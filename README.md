@@ -1,6 +1,10 @@
 <div align="center">
+<div align="center">
 
-# Compiler Construction Lab
+<img src="header.svg" alt="Compiler Construction Lab" width="100%">
+
+</div>
+<!-- # Compiler Construction Lab -->
 
   <p>
   <strong>• Compiler Construction Experiments•</strong>

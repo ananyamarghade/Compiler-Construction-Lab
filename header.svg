@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="1000" height="320" role="img" aria-label="Compiler Construction Lab - Lexical Analysis, Parsing, Intermediate Code" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>Compiler Construction Lab</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#1a1446"/>
+      <stop offset="1" stop-color="#0e4a5c"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="0.5" stop-color="#a5b4fc"/>
+      <stop offset="1" stop-color="#f0abfc"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a855f7" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="card"><rect width="1000" height="320" rx="20"/></clipPath>
+    <clipPath id="typeClip"><rect x="0" y="60" width="1000" height="80">
+      <animate attributeName="width" from="0" to="1000" dur="2.2s" begin="0.3s" fill="freeze"/>
+    </rect></clipPath>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono','Fira Code','Consolas','Courier New',monospace; }
+    .sans { font-family: 'Segoe UI','Helvetica Neue',Arial,system-ui,sans-serif; }
+    .chip rect { fill: #ffffff; fill-opacity: .06; stroke: #ffffff; stroke-opacity: .18; }
+    .chip text { fill: #cbd5e1; font-size: 15px; }
+    .row1 { animation: slideLeft 46s linear infinite; }
+    .row2 { animation: slideRight 52s linear infinite; }
+    @keyframes slideLeft  { from { transform: translateX(0); }      to { transform: translateX(-1200px); } }
+    @keyframes slideRight { from { transform: translateX(-1200px); } to { transform: translateX(0); } }
+    .cursor { animation: blink 1s steps(2, start) infinite; }
+    @keyframes blink { to { visibility: hidden; } }
+    .fadeUp { animation: fadeUp 1.1s ease-out 1.6s both; }
+    .fadeUp2 { animation: fadeUp 1.1s ease-out 2.0s both; }
+    .fadeUp3 { animation: fadeUp 1.1s ease-out 2.4s both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .flow { stroke-dasharray: 6 6; animation: dash 1.2s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -12; } }
+    .pill { animation: pulse 4s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { stroke-opacity: .35; } 50% { stroke-opacity: .9; } }
+  </style>
+
+  <g clip-path="url(#card)">
+    <!-- background -->
+    <rect width="1000" height="320" fill="url(#bg)"/>
+
+    <!-- drifting glows -->
+    <circle r="220" fill="url(#glowA)">
+      <animate attributeName="cx" values="150;380;150" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="60;220;60" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="240" fill="url(#glowB)">
+      <animate attributeName="cx" values="860;640;860" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="260;80;260" dur="17s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- subtle grid -->
+    <g stroke="#ffffff" stroke-opacity="0.04">
+      <path d="M0 80H1000M0 160H1000M0 240H1000"/>
+      <path d="M100 0V320M200 0V320M300 0V320M400 0V320M500 0V320M600 0V320M700 0V320M800 0V320M900 0V320"/>
+    </g>
+
+    <!-- token marquee (top, moving left) -->
+    <g opacity="0.55">
+      <g class="row1 mono">
+        <g id="set1">
+          <g class="chip"><rect x="10"  y="20" width="86"  height="28" rx="14"/><text x="53"   y="40" text-anchor="middle">int</text></g>
+          <g class="chip"><rect x="160" y="20" width="70"  height="28" rx="14"/><text x="195"  y="40" text-anchor="middle">ID</text></g>
+          <g class="chip"><rect x="300" y="20" width="56"  height="28" rx="14"/><text x="328"  y="40" text-anchor="middle">=</text></g>
+          <g class="chip"><rect x="420" y="20" width="86"  height="28" rx="14"/><text x="463"  y="40" text-anchor="middle">NUM</text></g>
+          <g class="chip"><rect x="570" y="20" width="56"  height="28" rx="14"/><text x="598"  y="40" text-anchor="middle">+</text></g>
+          <g class="chip"><rect x="690" y="20" width="56"  height="28" rx="14"/><text x="718"  y="40" text-anchor="middle">*</text></g>
+          <g class="chip"><rect x="810" y="20" width="110" height="28" rx="14"/><text x="865"  y="40" text-anchor="middle">E → E + T</text></g>
+          <g class="chip"><rect x="1000" y="20" width="56" height="28" rx="14"/><text x="1028" y="40" text-anchor="middle">;</text></g>
+        </g>
+        <use href="#set1" x="1200"/>
+      </g>
+    </g>
+
+    <!-- token marquee (bottom, moving right) -->
+    <g opacity="0.45">
+      <g class="row2 mono">
+        <g id="set2">
+          <g class="chip"><rect x="40"  y="274" width="100" height="28" rx="14"/><text x="90"   y="294" text-anchor="middle">t1 = a * b</text></g>
+          <g class="chip"><rect x="210" y="274" width="76"  height="28" rx="14"/><text x="248"  y="294" text-anchor="middle">%left</text></g>
+          <g class="chip"><rect x="350" y="274" width="76"  height="28" rx="14"/><text x="388"  y="294" text-anchor="middle">yylex</text></g>
+          <g class="chip"><rect x="490" y="274" width="96"  height="28" rx="14"/><text x="538"  y="294" text-anchor="middle">yyparse</text></g>
+          <g class="chip"><rect x="650" y="274" width="76"  height="28" rx="14"/><text x="688"  y="294" text-anchor="middle">while</text></g>
+          <g class="chip"><rect x="790" y="274" width="76"  height="28" rx="14"/><text x="828"  y="294" text-anchor="middle">[0-9]+</text></g>
+          <g class="chip"><rect x="930" y="274" width="100" height="28" rx="14"/><text x="980"  y="294" text-anchor="middle">t2 = t1 - c</text></g>
+          <g class="chip"><rect x="1100" y="274" width="76" height="28" rx="14"/><text x="1138" y="294" text-anchor="middle">( )</text></g>
+        </g>
+        <use href="#set2" x="1200"/>
+      </g>
+    </g>
+
+    <!-- title (typewriter reveal) -->
+    <g clip-path="url(#typeClip)">
+      <text class="sans" x="60" y="122" font-size="54" font-weight="800" fill="url(#titleGrad)" textLength="760" lengthAdjust="spacingAndGlyphs">Compiler Construction Lab</text>
+    </g>
+    <rect class="cursor" x="832" y="82" width="5" height="48" rx="2" fill="#67e8f9"/>
+
+    <!-- subtitle -->
+    <g class="fadeUp">
+      <text class="sans" x="62" y="156" font-size="19" fill="#c7d2fe">Lexical Analysis  →  Parsing  →  Expression Evaluation  →  Intermediate Code</text>
+    </g>
+    <g class="fadeUp2">
+      <text class="mono" x="62" y="184" font-size="14" fill="#94a3b8">Lex / Flex  •  YACC / Bison  •  C  •  Ananya Marghade  •  PRN 24070521004</text>
+    </g>
+
+    <!-- pipeline -->
+    <g class="fadeUp3">
+      <!-- connectors -->
+      <g stroke="#94a3b8" stroke-opacity="0.7" stroke-width="2" fill="none">
+        <path class="flow" d="M200 228H245"/>
+        <path class="flow" d="M385 228H430"/>
+        <path class="flow" d="M570 228H615"/>
+        <path class="flow" d="M755 228H800"/>
+      </g>
+      <!-- nodes -->
+      <g class="mono" font-size="15" text-anchor="middle">
+        <rect x="60"  y="208" width="140" height="40" rx="12" fill="#ffffff" fill-opacity="0.07" stroke="#e2e8f0" stroke-opacity="0.35"/>
+        <text x="130" y="233" fill="#e2e8f0">Source</text>
+
+        <rect class="pill" x="245" y="208" width="140" height="40" rx="12" fill="#fb923c" fill-opacity="0.14" stroke="#fb923c"/>
+        <text x="315" y="233" fill="#fdba74">Lex / Flex</text>
+
+        <rect x="430" y="208" width="140" height="40" rx="12" fill="#ffffff" fill-opacity="0.07" stroke="#e2e8f0" stroke-opacity="0.35"/>
+        <text x="500" y="233" fill="#e2e8f0">Tokens</text>
+
+        <rect class="pill" x="615" y="208" width="140" height="40" rx="12" fill="#a78bfa" fill-opacity="0.16" stroke="#a78bfa"/>
+        <text x="685" y="233" fill="#c4b5fd">YACC / Bison</text>
+
+        <rect x="800" y="208" width="140" height="40" rx="12" fill="#ffffff" fill-opacity="0.07" stroke="#e2e8f0" stroke-opacity="0.35"/>
+        <text x="870" y="233" fill="#e2e8f0">Output</text>
+      </g>
+      <!-- travelling data packet -->
+      <g>
+        <circle r="9" fill="#22d3ee" opacity="0.55" filter="url(#soft)">
+          <animateMotion dur="6s" repeatCount="indefinite" path="M70 228H930"/>
+        </circle>
+        <circle r="4.5" fill="#ecfeff">
+          <animateMotion dur="6s" repeatCount="indefinite" path="M70 228H930"/>
+        </circle>
+      </g>
+    </g>
+  </g>
+
+  <!-- card border -->
+  <rect x="0.5" y="0.5" width="999" height="319" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.12"/>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpiNDVmZmZhZS03YTQ3LTQ5MDMtYmExMS1kMmI5YzlhMDI0N2QAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaBXSmYFD8uk2rOKYQJ4Kbj0AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpkZjljMmM2Ny05NGU3LTQzZTQtYjYwNi04M2Y4ZGQ1MGYyMzNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoyzXbrdgjM53WXuZExGTfxwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg7SABqq7+b1bfeZ8rS2VUsUsUeqJpe4X/NxkElJXlaq+kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaA3n32no2xvRPOTCAg/6rfYAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIL5HSniq/0vqmQ5MTYOvVkPyLlnLhoVyF5qEyT9wV+elZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSOKZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmI0NWZmZmFlLTdhNDctNDkwMy1iYTExLWQyYjljOWEwMjQ3ZC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjMwN2QxYjk0LWNmMzMtNDE0Zi1iNDMyLTcwN2Q5OGVkMDVlYXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDtIAGqrv5vVt95nytLZVSxSxR6oml7hf83GQSUleVqr6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggIE/MSZXu3pPUIhMMa/riE5T7GgmYWZjOze8XP+fqqvaiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggqbaGfz64G6BZvKYeWBVLwXoHYzvtRvXxL5AoADwycbl0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQKSKW1YK4d0nPoCYohzJj5h8mWZHEV1oxAyauIKIjBhmWMsZFcvdM0NzTxBAzZah+0LA8mH5FgvUeVj7pZP0BGs=</c2pa:manifest></metadata></svg>

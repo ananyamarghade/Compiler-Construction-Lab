@@ -1,6 +1,7 @@
 <div align="center">
-#COMPILER CONSTRUCTION LAB
-  
+
+# Compiler Construction Lab
+
   <p>
   <strong>• Compiler Construction Experiments•</strong>
 </p>

@@ -1,158 +1,123 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="900" height="350" role="img" aria-label="COMPILER CONSTRUCTION LAB" xmlns:c2pa="http://c2pa.org/manifest">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 140" width="640" height="140" role="img" aria-label="COMPILER CONSTRUCTION LAB" xmlns:c2pa="http://c2pa.org/manifest">
   <title>COMPILER CONSTRUCTION LAB</title>
   <defs>
-    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="800" y2="0" spreadMethod="reflect">
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0" spreadMethod="reflect">
       <stop offset="0" stop-color="#8b5cf6"/>
       <stop offset="0.35" stop-color="#06b6d4"/>
       <stop offset="0.7" stop-color="#10b981"/>
       <stop offset="1" stop-color="#f59e0b"/>
-      <animate attributeName="x1" values="0;800" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="800;1600" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x1" values="0;600" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="600;1200" dur="8s" repeatCount="indefinite"/>
     </linearGradient>
-    <clipPath id="type">
-      <rect x="50" y="50" height="90" width="0">
-        <animate attributeName="width" calcMode="discrete" dur="2.4s" begin="0.3s" fill="freeze"
-          values="0;32;64;96;128;160;192;224;256;288;320;352;384;416;448;480;512;544;576;608;640;672;704;736;768;800;840"/>
-      </rect>
-    </clipPath>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
   <style>
     .mono { font-family: 'SFMono-Regular', ui-monospace, Consolas, 'Liberation Mono', Menlo, monospace; }
-    .muted { fill: #6e7781; }
-    .nf { fill: #8b5cf6; fill-opacity: 0.06; stroke: #8b5cf6; stroke-opacity: 0.7; stroke-width: 1.5; }
-    .nb { fill: #06b6d4; fill-opacity: 0.06; stroke: #06b6d4; stroke-opacity: 0.75; stroke-width: 1.5; }
-    .namef { fill: #6d4fd6; font-size: 13px; font-weight: 700; }
-    .nameb { fill: #0891b2; font-size: 13px; font-weight: 700; }
-    .sub { fill: #6e7781; font-size: 11px; }
-    .num { fill: #6e7781; font-size: 10px; letter-spacing: 2px; opacity: .8; }
-    .grp { fill: #6e7781; font-size: 12px; letter-spacing: 1px; font-weight: 600; }
-    .brk { stroke: #6e7781; stroke-opacity: 0.5; stroke-width: 1.5; fill: none; }
-    .tick { stroke: #6e7781; stroke-opacity: 0.35; stroke-width: 1.2; stroke-dasharray: 2 3; fill: none; }
-    .strip { fill: #6e7781; fill-opacity: 0.07; stroke: #6e7781; stroke-opacity: 0.45; stroke-width: 1.2; stroke-dasharray: 5 4; animation: dash 1.6s linear infinite; }
-    .link { stroke: #6e7781; stroke-opacity: 0.55; stroke-width: 1.5; stroke-dasharray: 4 5; fill: none; animation: dash 1.2s linear infinite; }
+    .nf { fill: #8b5cf6; fill-opacity: 0.06; stroke: #8b5cf6; stroke-opacity: 0.7; stroke-width: 1.2; }
+    .nb { fill: #06b6d4; fill-opacity: 0.06; stroke: #06b6d4; stroke-opacity: 0.75; stroke-width: 1.2; }
+    .namef { fill: #6d4fd6; font-size: 10.5px; font-weight: 700; }
+    .nameb { fill: #0891b2; font-size: 10.5px; font-weight: 700; }
+    .sub { fill: #6e7781; font-size: 9px; }
+    .grp { fill: #6e7781; font-size: 10px; letter-spacing: .6px; font-weight: 600; }
+    .brk { stroke: #6e7781; stroke-opacity: 0.5; stroke-width: 1.2; fill: none; }
+    .link { stroke: #6e7781; stroke-opacity: 0.55; stroke-width: 1.2; fill: none; }
     @media (prefers-color-scheme: dark) {
-      .muted, .sub, .num, .grp { fill: #8b949e; }
+      .sub, .grp { fill: #8b949e; }
       .namef { fill: #b49cff; }
       .nameb { fill: #5ad1e6; }
-      .link, .brk, .tick, .strip { stroke: #8b949e; }
-      .strip { fill: #8b949e; }
+      .link, .brk { stroke: #8b949e; }
     }
-    @keyframes dash { to { stroke-dashoffset: -9; } }
-    .blink { animation: blink 1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
   </style>
 
-  <text x="50" y="42" class="mono muted" font-size="14" opacity="0">
-    // analyze → synthesize → emit
-    <animate attributeName="opacity" values="0;0.9" dur="0.6s" begin="0s" fill="freeze"/>
-  </text>
-
-  <g clip-path="url(#type)">
-    <g class="mono" font-size="46" font-weight="800" text-anchor="middle" fill="url(#g)">
-      <text x="66" y="110">C</text>
-      <text x="98" y="110">O</text>
-      <text x="130" y="110">M</text>
-      <text x="162" y="110">P</text>
-      <text x="194" y="110">I</text>
-      <text x="226" y="110">L</text>
-      <text x="258" y="110">E</text>
-      <text x="290" y="110">R</text>
-      <text x="354" y="110">C</text>
-      <text x="386" y="110">O</text>
-      <text x="418" y="110">N</text>
-      <text x="450" y="110">S</text>
-      <text x="482" y="110">T</text>
-      <text x="514" y="110">R</text>
-      <text x="546" y="110">U</text>
-      <text x="578" y="110">C</text>
-      <text x="610" y="110">T</text>
-      <text x="642" y="110">I</text>
-      <text x="674" y="110">O</text>
-      <text x="706" y="110">N</text>
-      <text x="770" y="110">L</text>
-      <text x="802" y="110">A</text>
-      <text x="834" y="110">B</text>
-    </g>
+  <g class="mono" font-size="34" font-weight="800" text-anchor="middle" fill="url(#g)">
+      <text x="32" y="40">C</text>
+      <text x="56" y="40">O</text>
+      <text x="80" y="40">M</text>
+      <text x="104" y="40">P</text>
+      <text x="128" y="40">I</text>
+      <text x="152" y="40">L</text>
+      <text x="176" y="40">E</text>
+      <text x="200" y="40">R</text>
+      <text x="248" y="40">C</text>
+      <text x="272" y="40">O</text>
+      <text x="296" y="40">N</text>
+      <text x="320" y="40">S</text>
+      <text x="344" y="40">T</text>
+      <text x="368" y="40">R</text>
+      <text x="392" y="40">U</text>
+      <text x="416" y="40">C</text>
+      <text x="440" y="40">T</text>
+      <text x="464" y="40">I</text>
+      <text x="488" y="40">O</text>
+      <text x="512" y="40">N</text>
+      <text x="560" y="40">L</text>
+      <text x="584" y="40">A</text>
+      <text x="608" y="40">B</text>
   </g>
 
-  <rect x="852" y="66" width="14" height="52" rx="2" fill="#06b6d4" class="blink" opacity="0">
-    <set attributeName="opacity" to="1" begin="2.7s"/>
-  </rect>
+  <rect x="20" y="52" width="600" height="2.5" rx="1.25" fill="url(#g)"/>
 
-  <rect x="50" y="130" height="3" rx="1.5" width="0" fill="url(#g)">
-    <animate attributeName="width" values="0;800" dur="0.9s" begin="2.7s" fill="freeze"/>
-  </rect>
+  <g opacity="0">
+    <rect x="20" y="10" width="2.5" height="46" rx="1.2" fill="url(#beam)"/>
+    <rect x="17" y="10" width="8.5" height="46" rx="4" fill="url(#beam)" opacity=".25"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;598 0;598 0" keyTimes="0;.75;1" dur="6s" begin="0.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;.95;.95;0;0" keyTimes="0;.03;.72;.75;1" dur="6s" begin="0.6s" repeatCount="indefinite"/>
+  </g>
 
   <g class="mono">
-    <text class="grp" x="243.6" y="158" text-anchor="middle">Front-End (Analysis Phase)</text>
-    <path class="brk" d="M50 172 V166 H437.2 V172"/>
-    <text class="grp" x="656.4" y="158" text-anchor="middle">Back-End (Synthesis Phase)</text>
-    <path class="brk" d="M462.8 172 V166 H850 V172"/>
-
-    <path class="link" d="M162 223.0 H187.6"/>
-    <path class="link" d="M299.6 223.0 H325.2"/>
-    <path class="link" d="M437.2 223.0 H462.8"/>
-    <path class="link" d="M574.8 223.0 H600.4"/>
-    <path class="link" d="M712.4 223.0 H738"/>
-
-    <rect class="nf" x="50" y="182" width="112" height="82" rx="10">
-      <animate attributeName="fill-opacity" dur="9s" begin="3.4s" repeatCount="indefinite" keyTimes="0;.08;1" values=".3;.06;.06"/>
+    <text class="grp" x="167.6" y="73" text-anchor="middle">Front-End (Analysis Phase)</text>
+    <path class="brk" d="M20 82 V78 H315.2 V82"/>
+    <text class="grp" x="472.4" y="73" text-anchor="middle">Back-End (Synthesis Phase)</text>
+    <path class="brk" d="M324.8 82 V78 H620 V82"/>
+    <path class="link" d="M112.0 109.0 H121.6"/>
+    <path class="link" d="M213.6 109.0 H223.2"/>
+    <path class="link" d="M315.2 109.0 H324.8"/>
+    <path class="link" d="M416.8 109.0 H426.4"/>
+    <path class="link" d="M518.4 109.0 H528.0"/>
+    <rect class="nf" x="20.0" y="86" width="92" height="46" rx="9">
+      <animate attributeName="fill-opacity" dur="9s" begin="0.6s" repeatCount="indefinite" keyTimes="0;.08;1" values=".32;.06;.06"/>
     </rect>
-    <path class="tick" d="M106.0 264 V278"/>
-    <rect class="nf" x="187.6" y="182" width="112" height="82" rx="10">
-      <animate attributeName="fill-opacity" dur="9s" begin="3.4s" repeatCount="indefinite" keyTimes="0;0.12;0.20;0.28;1" values=".06;.06;.3;.06;.06"/>
+    <rect class="nf" x="121.6" y="86" width="92" height="46" rx="9">
+      <animate attributeName="fill-opacity" dur="9s" begin="0.6s" repeatCount="indefinite" keyTimes="0;0.12;0.20;0.28;1" values=".06;.06;.32;.06;.06"/>
     </rect>
-    <path class="tick" d="M243.6 264 V278"/>
-    <rect class="nf" x="325.2" y="182" width="112" height="82" rx="10">
-      <animate attributeName="fill-opacity" dur="9s" begin="3.4s" repeatCount="indefinite" keyTimes="0;0.32;0.40;0.48;1" values=".06;.06;.3;.06;.06"/>
+    <rect class="nf" x="223.2" y="86" width="92" height="46" rx="9">
+      <animate attributeName="fill-opacity" dur="9s" begin="0.6s" repeatCount="indefinite" keyTimes="0;0.32;0.40;0.48;1" values=".06;.06;.32;.06;.06"/>
     </rect>
-    <path class="tick" d="M381.2 264 V278"/>
-    <rect class="nb" x="462.8" y="182" width="112" height="82" rx="10">
-      <animate attributeName="fill-opacity" dur="9s" begin="3.4s" repeatCount="indefinite" keyTimes="0;0.52;0.60;0.68;1" values=".06;.06;.3;.06;.06"/>
+    <rect class="nb" x="324.8" y="86" width="92" height="46" rx="9">
+      <animate attributeName="fill-opacity" dur="9s" begin="0.6s" repeatCount="indefinite" keyTimes="0;0.52;0.60;0.68;1" values=".06;.06;.32;.06;.06"/>
     </rect>
-    <path class="tick" d="M518.8 264 V278"/>
-    <rect class="nb" x="600.4" y="182" width="112" height="82" rx="10">
-      <animate attributeName="fill-opacity" dur="9s" begin="3.4s" repeatCount="indefinite" keyTimes="0;0.72;0.80;0.88;1" values=".06;.06;.3;.06;.06"/>
+    <rect class="nb" x="426.4" y="86" width="92" height="46" rx="9">
+      <animate attributeName="fill-opacity" dur="9s" begin="0.6s" repeatCount="indefinite" keyTimes="0;0.72;0.80;0.88;1" values=".06;.06;.32;.06;.06"/>
     </rect>
-    <path class="tick" d="M656.4 264 V278"/>
-    <rect class="nb" x="738" y="182" width="112" height="82" rx="10">
-      <animate attributeName="fill-opacity" dur="9s" begin="3.4s" repeatCount="indefinite" keyTimes="0;.92;1" values=".06;.06;.3"/>
+    <rect class="nb" x="528.0" y="86" width="92" height="46" rx="9">
+      <animate attributeName="fill-opacity" dur="9s" begin="0.6s" repeatCount="indefinite" keyTimes="0;.92;1" values=".06;.06;.32"/>
     </rect>
-    <path class="tick" d="M794.0 264 V278"/>
-
-    <text class="num" x="106.0" y="200" text-anchor="middle">01</text>
-    <text class="namef" x="106.0" y="220" text-anchor="middle">Lexical</text>
-    <text class="namef" x="106.0" y="235" text-anchor="middle">Analysis</text>
-    <text class="sub" x="106.0" y="250" text-anchor="middle">(Scanner)</text>
-    <text class="num" x="243.6" y="200" text-anchor="middle">02</text>
-    <text class="namef" x="243.6" y="220" text-anchor="middle">Syntax</text>
-    <text class="namef" x="243.6" y="235" text-anchor="middle">Analysis</text>
-    <text class="sub" x="243.6" y="250" text-anchor="middle">(Parser)</text>
-    <text class="num" x="381.2" y="200" text-anchor="middle">03</text>
-    <text class="namef" x="381.2" y="226" text-anchor="middle">Semantic</text>
-    <text class="namef" x="381.2" y="241" text-anchor="middle">Analysis</text>
-    <text class="num" x="518.8" y="200" text-anchor="middle">04</text>
-    <text class="nameb" x="518.8" y="220" text-anchor="middle">Intermediate</text>
-    <text class="nameb" x="518.8" y="235" text-anchor="middle">Code</text>
-    <text class="nameb" x="518.8" y="250" text-anchor="middle">Generation</text>
-    <text class="num" x="656.4" y="200" text-anchor="middle">05</text>
-    <text class="nameb" x="656.4" y="226" text-anchor="middle">Code</text>
-    <text class="nameb" x="656.4" y="241" text-anchor="middle">Optimization</text>
-    <text class="num" x="794.0" y="200" text-anchor="middle">06</text>
-    <text class="nameb" x="794.0" y="226" text-anchor="middle">Code</text>
-    <text class="nameb" x="794.0" y="241" text-anchor="middle">Generation</text>
-
-    <rect class="strip" x="50" y="278" width="800" height="26" rx="8"/>
-    <text class="sub" x="450" y="295" text-anchor="middle">Symbol Table</text>
-    <rect class="strip" x="50" y="312" width="800" height="26" rx="8"/>
-    <text class="sub" x="450" y="329" text-anchor="middle">Error Handler</text>
+    <text class="namef" x="66.0" y="103.0" text-anchor="middle">Lexical</text>
+    <text class="namef" x="66.0" y="115.5" text-anchor="middle">Analysis</text>
+    <text class="sub" x="66.0" y="128.0" text-anchor="middle">(Scanner)</text>
+    <text class="namef" x="167.6" y="103.0" text-anchor="middle">Syntax</text>
+    <text class="namef" x="167.6" y="115.5" text-anchor="middle">Analysis</text>
+    <text class="sub" x="167.6" y="128.0" text-anchor="middle">(Parser)</text>
+    <text class="namef" x="269.2" y="107" text-anchor="middle">Semantic</text>
+    <text class="namef" x="269.2" y="120" text-anchor="middle">Analysis</text>
+    <text class="nameb" x="370.8" y="103.0" text-anchor="middle">Intermediate</text>
+    <text class="nameb" x="370.8" y="115.5" text-anchor="middle">Code</text>
+    <text class="nameb" x="370.8" y="128.0" text-anchor="middle">Generation</text>
+    <text class="nameb" x="472.4" y="107" text-anchor="middle">Code</text>
+    <text class="nameb" x="472.4" y="120" text-anchor="middle">Optimization</text>
+    <text class="nameb" x="574.0" y="107" text-anchor="middle">Code</text>
+    <text class="nameb" x="574.0" y="120" text-anchor="middle">Generation</text>
   </g>
 
   <g opacity="0">
-    <circle r="11" fill="#f59e0b" opacity="0.25"/>
-    <circle r="5" fill="#f59e0b"/>
-    <animateMotion path="M106.0,182 H794.0" dur="9s" begin="3.4s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.03;.97;1" dur="9s" begin="3.4s" repeatCount="indefinite"/>
+    <circle r="8" fill="#f59e0b" opacity="0.25"/>
+    <circle r="3.5" fill="#f59e0b"/>
+    <animateMotion path="M66.0,86 H574.0" dur="9s" begin="0.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.03;.97;1" dur="9s" begin="0.6s" repeatCount="indefinite"/>
   </g>
-<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToxYzEwNWRiNi0zYWI1LTRkY2ItOWFiYy05Y2Q3MTkzYThmMWUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaJB+dpg+QDb5RY2KfX6Xi0EAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpiNzAwYjVmMy01NjEwLTRjYzktYTRmNi02Y2RjNWMxMjc1NDVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNohvYScAge0jblVMaM9MXKSgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggkN3S/U9Jo75EGxjfAFJAvH2ngnN2c56aLEywF0ickTmkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaDPWt8reBwdg551YMuTfNzMAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIOAuIBIYIlefVLLK27v7FW4w8d/2htTGhW+0YhPRuGwgZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSHXZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjFjMTA1ZGI2LTNhYjUtNGRjYi05YWJjLTljZDcxOTNhOGYxZS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjIzNTJkZjdlLTQ4YTktNDQzOS1hMjVkLWE1OTMwZThkZjI3MHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCQ3dL9T0mjvkQbGN8AUkC8faeCc3ZznposTLAXSJyROaJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggsqz0Lz4GE/NiVTMqYdlRKCgw6Ybsk/iKzHUzI+9cHMKiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggGg+BaIw6dcEFMMePnsh+TEomXalsId+ba8U8WYsG1mp0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQFUpFuNjfGWBemysXeWqm+KjdhcsorUBYd4S69qTrpWaN3+uoVlNwhKyglPUEqMsHtRlHK7ko2lZh0AG0B/gdw0=</c2pa:manifest></metadata></svg>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpkMjhkNTJiZC1hNjRiLTQxZTctOTBhYi0yMjE1MmJmNDhjNjcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaOu9VVkGiOuRyWoTDfPWwgoAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyMWMzYmU0Yi00MzYzLTQ5OTUtOTc1Yy0yNTg3NDczMjZkMjRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoaTrZbox5o30sYwryC7GOMQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggxI7vM48XIc9OVyn1sz0ZLTV39/1EUeGpLpM9wlxnjcGkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaEHGuFuMavq1BeFOl+DaR1EAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIJs6cJkTQJwEDw8RqHOk/L6UXtu08RdwR/kBGl6fzprwZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GRrtZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmQyOGQ1MmJkLWE2NGItNDFlNy05MGFiLTIyMTUyYmY0OGM2Ny9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjlhZjJhNmQ2LTEzZTYtNDkyMi1hN2MwLWE1NmY4NTg4MWZmYnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDEju8zjxchz05XKfWzPRktNXf3/URR4akukz3CXGeNwaJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg8XrD9joXOSQ+eud0MagBWbB/AcvMe9BW127ihPds2NyiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg3FQvhiN3qT1ewmjbiJbzn4W4oc+OnGNwItmzQh5kAUB0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQA0GPBVeOdZexBiXCcUdqee4pn2bGPjDNOyP7fDeL0TEbBnfHyco9L5axUoVfCNUpcHmxHeN3yCcH0oD5REdqwY=</c2pa:manifest></metadata></svg>
